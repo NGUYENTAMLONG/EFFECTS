@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="layer layer_0">
+        <img src="Images/layer_0.png" alt="" />
+      </div>
+      <div class="layer layer_1">
+        <img src="Images/layer_1.png" alt="" />
+      </div>
+      <div class="layer layer_2">
+        <img src="Images/layer_2.png" alt="" />
+      </div>
+      <div class="layer layer_3">
+        <img src="Images/layer_3.png" alt="" />
+      </div>
+      <div class="layer layer_4">
+        <img src="Images/layer_4.png" alt="" />
+      </div>
+      <div class="layer layer_5">
+        <img src="Images/layer_5.png" alt="" />
+      </div>
+      <div class="layer layer_6">
+        <img src="Images/layer_6.png" alt="" />
+      </div>
+    </div>
+    <div class="content">
+      <h1 class="title">Firewatch</h1>
+      <p>
+        Firewatch is an adventure game developed by Campo Santo and published by
+        the developer in partnership with Panic. The game was released in
+        February 2016 for Microsoft Windows, OS X, Linux, and PlayStation 4, for
+        Xbox One in September 2016, and for Nintendo Switch in December 2018.
+        The story follows a fire lookout named Henry in the Shoshone National
+        Forest, a year after the Yellowstone fires of 1988. A month after his
+        first day at work, strange things begin happening to him and his
+        supervisor Delilah, which connects to a conspired mystery that happened
+        years ago. Henry interacts with Delilah using a walkie-talkie, with the
+        player choosing from dialog options to communicate. His exchanges with
+        Delilah inform the process by which their relationship is developed. The
+        game was directed by Olly Moss and Sean Vanaman, written by Chris Remo,
+        Jake Rodkin, Moss and Vanaman, and produced by Gabe McGill and artist
+        Jane Ng.<br />
+        <br />
+        The game's environment was modelled by Ng, based on a single painting by
+        Moss. The design draws inspiration from New Deal advertisements by the
+        National Park Service and field research conducted in Yosemite National
+        Park. The game received generally positive reviews, earning praise for
+        its story, characters, dialogue, and visual style. However, the presence
+        of technical issues and the game's ending were both subjects of
+        criticism. <br />
+        <br />Firewatch won the award for Best 3D Visual Experience at the Unity
+        Awards 2016, Best Indie Game at the 2016 Golden Joystick Awards, Best
+        Narrative at the 2017 Game Developers Choice Awards and Debut Game at
+        the 2017 British Academy Games Awards. By late 2016, the game had sold
+        over a million copies. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Unde dolore mollitia minima aspernatur doloribus,
+        perferendis quaerat laboriosam vitae alias error amet, porro quae saepe
+        excepturi sed molestiae reiciendis doloremque asperiores? Lorem ipsum
+        dolor sit, amet consectetur adipisicing elit. Ipsam iste et fuga,
+        consequatur facilis iure officiis nisi cumque, iusto, nobis assumenda
+        molestiae odio inventore nihil tenetur blanditiis ducimus eaque
+        repellendus!
+      </p>
+      <h2>Development and release</h2>
+      <p>
+        Firewatch is the first video game from Campo Santo and was created by
+        Jake Rodkin and Sean Vanaman, who were the creative leads on The Walking
+        Dead; Nels Anderson, the lead designer of Mark of the Ninja; and artist
+        Olly Moss.[8] Chris Remo was involved in many aspects of the design and
+        also composed the score.<br />
+        <br />
+        Development for Firewatch began with a single painting by Moss.[2] Jane
+        Ng, lead environmental artist at Campo Santo, was tasked with
+        translating Moss' work into 3D environments while maintaining his
+        stylized artistic vision.[2] Moss, who had previously been known
+        primarily for his graphic design work, had joined Vanaman and Rodkin to
+        found Campo Santo after spending many years working on the periphery of
+        game development.[10] In creating the painting, Moss emulated National
+        Park Service posters from the New Deal era in both color palette and
+        iconography.<br />
+        <br />
+        The development team went on a camping trip to Yosemite National Park
+        for inspiration for the game,[12] where they visited a lookout tower
+        built with the same design as its video game counterpart.[13] Further
+        inspiration for the game came from Vanaman and Anderson's experiences
+        growing up in rural Wyoming.<br />
+        <br />Firewatch runs on the Unity game engine.[14] Ng disapproved of the
+        tools for creating trees and therefore hand-modeled the 23 kinds of
+        trees that would be placed within the game 4,600 times. A custom shader
+        was also employed to produce more stylized and simplified foliage.[15]
+        The in-game fire lookout towers were built in accordance with government
+        specifications, utilizing standard lumber size, after Ng's first attempt
+        was unsatisfactory.[16]
+      </p>
+    </div>
+  </body>
+  <script>
+    var content = document.querySelector(".content");
+    var layer_0 = document.querySelector(".layer_0");
+    var layer_1 = document.querySelector(".layer_1");
+    var layer_2 = document.querySelector(".layer_2");
+    var layer_3 = document.querySelector(".layer_3");
+    var layer_4 = document.querySelector(".layer_4");
+    var layer_5 = document.querySelector(".layer_5");
+    var layer_6 = document.querySelector(".layer_6");
+
+    var elmY = document.querySelector(".title").offsetTop;
+    console.log(elmY);
+    window.onscroll = function () {
+      var winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+
+      layer_2.style.bottom = winScroll / 5 + "px";
+      layer_3.style.bottom = winScroll / 4 + "px";
+      layer_4.style.bottom = winScroll / 3 + "px";
+      layer_5.style.bottom = winScroll / 2 + "px";
+      layer_6.style.bottom = winScroll / 1 + "px";
+      content.style.marginTop = `calc(100vh - ${winScroll}px)`;
+      if (winScroll === 0) {
+        document.addEventListener("mousemove", mouseMove);
+      } else {
+        document.removeEventListener("mousemove", mouseMove);
+      }
+    };
+
+    function mouseMove(evt) {
+      let x = evt.clientX / innerWidth;
+      let y = evt.clientY / innerHeight;
+      layer_0.style.left = x * 70 + "px";
+      layer_1.style.left = x * 70 + "px";
+      layer_2.style.left = x * 60 + "px";
+      layer_3.style.right = x * 50 + "px";
+      layer_4.style.left = x * 40 + "px";
+      layer_5.style.right = x * 50 + "px";
+      layer_6.style.left = x * 60 + "px";
+
+      layer_1.style.bottom = y * 60 + "px";
+      layer_2.style.bottom = y * 50 + "px";
+      layer_3.style.bottom = y * 40 + "px";
+      layer_4.style.bottom = y * 30 + "px";
+      layer_5.style.bottom = y * 20 + "px";
+      layer_6.style.bottom = y * 50 + "px";
+      content.style.marginTop = `calc(100vh - ${y * 50}px)`;
+    }
+  </script>
+</html>
